@@ -1,0 +1,57 @@
+Emotion,Accuracy,Classification Report
+angry,1.0,"              precision    recall  f1-score   support
+
+       angry       1.00      1.00      1.00       991
+
+    accuracy                           1.00       991
+   macro avg       1.00      1.00      1.00       991
+weighted avg       1.00      1.00      1.00       991
+"
+disgust,1.0,"              precision    recall  f1-score   support
+
+     disgust       1.00      1.00      1.00       109
+
+    accuracy                           1.00       109
+   macro avg       1.00      1.00      1.00       109
+weighted avg       1.00      1.00      1.00       109
+"
+fear,1.0,"              precision    recall  f1-score   support
+
+        fear       1.00      1.00      1.00      1024
+
+    accuracy                           1.00      1024
+   macro avg       1.00      1.00      1.00      1024
+weighted avg       1.00      1.00      1.00      1024
+"
+happy,1.0,"              precision    recall  f1-score   support
+
+       happy       1.00      1.00      1.00      1798
+
+    accuracy                           1.00      1798
+   macro avg       1.00      1.00      1.00      1798
+weighted avg       1.00      1.00      1.00      1798
+"
+sad,1.0,"              precision    recall  f1-score   support
+
+         sad       1.00      1.00      1.00      1216
+
+    accuracy                           1.00      1216
+   macro avg       1.00      1.00      1.00      1216
+weighted avg       1.00      1.00      1.00      1216
+"
+suprise,1.0,"              precision    recall  f1-score   support
+
+     suprise       1.00      1.00      1.00       800
+
+    accuracy                           1.00       800
+   macro avg       1.00      1.00      1.00       800
+weighted avg       1.00      1.00      1.00       800
+"
+neutral,1.0,"              precision    recall  f1-score   support
+
+     neutral       1.00      1.00      1.00      1240
+
+    accuracy                           1.00      1240
+   macro avg       1.00      1.00      1.00      1240
+weighted avg       1.00      1.00      1.00      1240
+"
