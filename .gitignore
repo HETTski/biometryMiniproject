@@ -25,6 +25,10 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+fer_images/
+emotion_influence_results.csv
+*.png
+*.csv
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
