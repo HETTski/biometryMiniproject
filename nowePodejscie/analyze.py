@@ -1,37 +1,32 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 # Ścieżki
-RESULTS_PATH = "results.csv"
+RESULTS_PATH = "results_detailed.csv"
+PLOT_PATH = "emotion_accuracy_plot.png"
 
-# Funkcja do analizy wyników
-def analyze_results(results_path):
-    # Wczytanie wyników
-    results = pd.read_csv(results_path)
-    
-    # Wyświetlenie dokładności modeli
-    print("Dokładność modeli:")
-    print(results[["Model", "Accuracy"]])
-    
-    # Wizualizacja dokładności
-    plt.figure(figsize=(8, 6))
-    sns.barplot(x="Model", y="Accuracy", data=results, palette="viridis")
-    plt.title("Dokładność modeli na zbiorze testowym")
-    plt.ylabel("Dokładność")
-    plt.xlabel("Model")
-    plt.ylim(0, 1)
-    plt.show()
-    plt.savefig("accuracy_plot.png", dpi=300)
+# Wczytanie wyników
+def load_results(results_path):
+    return pd.read_csv(results_path)
 
-
-    # Wyświetlenie raportów klasyfikacyjnych
-    for index, row in results.iterrows():
-        print(f"\nRaport dla modelu {row['Model']}:\n")
-        print(row["Report"])
-
-# Główna funkcja
-if __name__ == "__main__":
+# Analiza i wizualizacja wyników
+def analyze_results(results):
     print("Analiza wyników...")
-    analyze_results(RESULTS_PATH)
+    grouped = results.groupby("Emotion")[["Precision", "Recall", "F1-Score"]].mean()
+    print(grouped)
     
+    # Wizualizacja
+    grouped.plot(kind="bar", figsize=(10, 6))
+    plt.title("Średnie wyniki dla każdej emocji")
+    plt.ylabel("Wartość")
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.savefig(PLOT_PATH)
+    print(f"Wykres zapisany do: {PLOT_PATH}")
+
+if __name__ == "__main__":
+    # Wczytaj dane
+    results = load_results(RESULTS_PATH)
+    
+    # Analizuj wyniki
+    analyze_results(results)
